@@ -19,7 +19,9 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+$codeColor: #f0f0f0;
+
 .counter {
   margin: 100px auto;
   border-radius: 3px;
@@ -28,7 +30,7 @@ export default {
   text-align: center;
   line-height: 200px;
   font-size: 5rem;
-  background-color: #f0f0f0;
+  background-color: $codeColor;
   user-select: none;
 }
 </style>

@@ -1,6 +1,6 @@
 {
   "name": "{{ name }}",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "{{ description }}",
   "main": "client/index.js",
   "scripts": {
@@ -21,6 +21,7 @@
     ]
   },
   "dependencies": {
+    "axios": "^0.16.0",
     "babel-runtime": "^6.18.0",
     "promise-polyfill": "^6.0.2",
     "vue": "^2.2.0",
@@ -43,8 +44,8 @@
     {{/electron}}
     {{#eslint}}
     "xo": "^0.18.0",
-    "eslint-config-vue": "latest",
-    "eslint-plugin-vue": "latest",
+    "eslint-config-vue": "^2.0.2",
+    "eslint-plugin-vue": "^v2.0.0",
     {{#testcafe}}
     "eslint-plugin-testcafe": "^0.2.0",
     {{/testcafe}}
@@ -54,7 +55,9 @@
     "file-loader": "^0.9.0",
     "friendly-errors-webpack-plugin": "^1.1.2",
     "html-webpack-plugin": "^2.22.0",
+    "node-sass": "^4.5.2",
     "raw-loader": "^0.5.1",
+    "sass-loader": "^6.0.3",
     "offline-plugin": "^4.5.3",
     "postcss-loader": "^0.9.1",
     "postcss-nested": "^1.0.0",
