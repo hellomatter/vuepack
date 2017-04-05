@@ -21,8 +21,10 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.vue', '.css', '.json'],
     alias: {
-      root: path.join(__dirname, '../client'),
-      components: path.join(__dirname, '../client/components')
+      root: path.resolve(__dirname, '../client'),
+      components: path.resolve(__dirname, '../client/components'),
+      views: path.resolve(__dirname, '../client/views'),
+      assets: path.resolve(__dirname, '../client/assets')
     },
     modules: [
       _.cwd('node_modules'),
