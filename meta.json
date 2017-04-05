@@ -9,15 +9,16 @@
       "type": "string",
       "required": false,
       "message": "Project description",
-      "default": "My Superb Vue Project"
+      "default": "A great Matter Vue Project"
     },
     "author": {
       "type": "string",
-      "message": "Author"
+      "message": "Author",
+      "default": "Matter Technology Ltd. <email@hellomatter.com>"
     },
     "eslint": {
       "type": "confirm",
-      "message": "Do you want to support ESLint?"
+      "message": "Do you want to support ESLint? You should."
     },
     "jsx": {
       "type": "confirm",
@@ -31,8 +32,8 @@
     },
     "testcafe": {
       "type": "confirm",
-      "message": "Add testcafe to run integration tests?",
-      "default": false
+      "message": "Add testcafe to run integration tests? You should write tests.",
+      "default": true
     }
   },
   "filters": {
@@ -44,5 +45,5 @@
     ".eslintrc": "eslint",
     "test/e2e/*": "testcafe"
   },
-  "completeMessage": "To get started:\n\n  cd {{destDirName}}\n  npm install\n  npm run dev{{#electron}}\n\nIn another tab:\n\n  npm run app{{/electron}}"
+  "completeMessage": "To get started:\n\n  cd {{destDirName}}\n  yarn && yarn run dev{{#electron}}\n\nIn another tab:\n\n  yarn run app{{/electron}}"
 }

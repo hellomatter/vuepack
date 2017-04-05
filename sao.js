@@ -9,15 +9,15 @@ module.exports = {
     description: {
       required: false,
       message: 'Project description',
-      default: 'My Superb Vue Project'
+      default: 'A great Matter Vue Project'
     },
     author: {
       message: 'Author',
-      role: 'git:name'
+      role: 'Matter Technology Ltd. <email@hellomatter.com>'
     },
     eslint: {
       type: 'confirm',
-      message: 'Do you want to support ESLint?'
+      message: 'Do you want to support ESLint? You should.'
     },
     jsx: {
       type: 'confirm',
@@ -31,7 +31,7 @@ module.exports = {
     },
     "testcafe": {
       "type": "confirm",
-      "message": "Add testcafe to run integration tests?",
+      "message": "Add testcafe to run integration tests? You should write tests.",
       "default": false
     }
   },
