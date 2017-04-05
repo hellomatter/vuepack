@@ -5,7 +5,9 @@
 
 ## Note
 
-I highly recommend you to use [vbuild](https://github.com/egoist/vbuild) instead, you can develop Vue.js app with no-config until you need it. Less boilerplate code, more happiness ❤️
+This is a fork from [egoist/vuepack](https://github.com/egoist/vuepack) on 2017-03-27.
+
+It is modified to Matter's needs based on the experience gained from the iPOSSMon project.
 ## Features
 
 - Vue 2 / Vue-router / Vuex
