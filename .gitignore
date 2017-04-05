@@ -76,4 +76,3 @@ bower_components
 .bower-tmp
 /build.js.map
 /build.js
-/static/css/trocar.app.min.css
