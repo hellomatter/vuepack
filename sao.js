@@ -13,7 +13,7 @@ module.exports = {
     },
     author: {
       message: 'Author',
-      role: 'Matter Technology Ltd. <email@hellomatter.com>'
+      role: 'git:name'
     },
     eslint: {
       type: 'confirm',
@@ -32,7 +32,7 @@ module.exports = {
     "testcafe": {
       "type": "confirm",
       "message": "Add testcafe to run integration tests? You should write tests.",
-      "default": false
+      "default": true
     }
   },
   filters: {
