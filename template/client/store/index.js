@@ -1,33 +1,24 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
+import plugins from './plugins'
+import * as actions from './actions'
+
+// Modules
+import counter from './modules/counter'
+
 Vue.use(Vuex)
 
-const state = {
-  count: 0
-}
-
-const mutations = {
-  INCREMENT (state) {
-    state.count++
-  },
-  DECREMENT (state) {
-    state.count--
-  }
-}
-
-const actions = {
-  incrementAsync ({ commit }) {
-    setTimeout(() => {
-      commit('INCREMENT')
-    }, 200)
-  }
-}
+const debug = process.env.NODE_ENV !== 'production'
 
 const store = new Vuex.Store({
-  state,
-  mutations,
-  actions
+  modules: {
+    counter
+  },
+  actions,
+  debug,
+  strict: debug,
+  plugins
 })
 
 export default store
