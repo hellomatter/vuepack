@@ -29,6 +29,11 @@ module.exports = {
       message: 'Support Electron?',
       default: false
     },
+    cordova: {
+      type: 'confirm',
+      message: 'Support Electron?',
+      default: false
+    },
     "testcafe": {
       "type": "confirm",
       "message": "Add testcafe to run integration tests? You should write tests.",

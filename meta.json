@@ -30,6 +30,29 @@
       "message": "Support Electron?",
       "default": false
     },
+    "cordova": {
+      "type": "confirm",
+      "message": "Support Cordova?",
+      "default": true
+    },
+    "bundle_identifier": {
+      "type": "string",
+      "when": "cordova",
+      "message": "App Bundle Identifier",
+      "default": "com.matter.awesomeapp"
+    },
+    "ios": {
+      "type": "confirm",
+      "when": "cordova",
+      "message": "Support iOS?",
+      "default": true
+    },
+    "android": {
+      "type": "confirm",
+      "when": "cordova",
+      "message": "Support Android?",
+      "default": true
+    },
     "testcafe": {
       "type": "confirm",
       "message": "Add testcafe to run integration tests? You should write tests.",
@@ -42,8 +65,14 @@
     "client/views/*.vue": "!jsx",
     "client/views/**/*.{js,css}": "jsx",
     "app/*": "electron",
+    "config.xml": "cordova",
+    "www/*": "cordova",
+    "static/resources/cordova.js": "cordova",
+    "static/resources/android/*": "cordova && android",
+    "static/resources/ios/*": "cordova && ios",
     ".eslintrc": "eslint",
     "test/e2e/*": "testcafe"
   },
+  "skipInterpolation": "static/resources/**",
   "completeMessage": "To get started:\n\n  cd {{destDirName}}\n  yarn && yarn run dev{{#electron}}\n\nIn another tab:\n\n  yarn run app{{/electron}}"
 }

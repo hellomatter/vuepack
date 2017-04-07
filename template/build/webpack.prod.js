@@ -1,9 +1,11 @@
 'use strict'
 process.env.NODE_ENV = 'production'
 
+const path = require('path')
 const exec = require('child_process').execSync
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ProgressPlugin = require('webpack/lib/ProgressPlugin')
 const OfflinePlugin = require('offline-plugin')
 const base = require('./webpack.base')
@@ -16,6 +18,9 @@ if (config.electron) {
   exec('rm -rf app/assets/')
 } else {
   // remove dist folder in web app mode
+  if (config.cordova) {
+    exec('rm -rf www/')
+  }
   exec('rm -rf dist/')
   // use source-map in web app mode
   base.devtool = 'source-map'
@@ -57,7 +62,17 @@ base.plugins.push(
     ServiceWorker: {
       events: true
     }
-  })
+  }),
+  new HtmlWebpackPlugin({
+    title: config.title,
+    template: path.resolve(__dirname, 'index.html'),
+    filename: path.join(__dirname, '../dist/index.html')
+  }){{#cordova}},
+  new HtmlWebpackPlugin({
+    title: config.title,
+    template: path.resolve(__dirname, 'index.html'),
+    filename: path.join(__dirname, '../www/index.html')
+  }){{/cordova}}
 )
 
 // extract css in standalone css files
